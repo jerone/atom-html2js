@@ -1,4 +1,4 @@
-# atom-html2js-v2 package
+# HTML2JS package
 
 A short description of your package.
 

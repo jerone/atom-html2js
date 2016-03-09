@@ -3,9 +3,19 @@
 	"version": "0.0.0",
 	"description": "A short description of your package",
 	"keywords": [],
+	"bugs": {
+		"url": "https://github.com/jerone/atom-html2js/issues"
+	},
 	"license": "MIT",
-	"main": "./lib/atom-html2js-v2",
-	"repository": {},
+	"author": {
+		"name": "Jeroen van Warmerdam"
+	},
+	"contributors": [],
+	"main": "./lib/html2js",
+	"repository": {
+		"type": "git",
+		"url": "https://jerone@github.com/jerone/atom-html2js"
+	},
 	"dependencies": {},
 	"devDependencies": {
 		"eslint": "^2.3.0",
@@ -17,23 +27,7 @@
 	"engines": {
 		"atom": ">=1.0.0 <2.0.0"
 	},
-    "activationCommands": {
-		"atom-workspace": "atom-html2js-v2:toggle"
-	},
-	"standard": {
-		"globals": [
-			"advanceClock",
-			"atom",
-			"beforeEach",
-			"expect",
-			"describe",
-			"it",
-			"jasmine",
-			"MouseEvent",
-			"runs",
-			"spyOn",
-			"waits",
-			"waitsForPromise"
-		]
+	"activationCommands": {
+		"atom-workspace": "html2js:toggle"
 	}
 }

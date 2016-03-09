@@ -4,7 +4,19 @@
 		"standard"
 	],
 	"globals": {
-		"atom": true
+		"atom": true,
+		"advanceClock": true,
+		"atom": true,
+		"beforeEach": true,
+		"expect": true,
+		"describe": true,
+		"it": true,
+		"jasmine": true,
+		"MouseEvent": true,
+		"runs": true,
+		"spyOn": true,
+		"waits": true,
+		"waitsForPromise": true
 	},
 	"env": {
 		"es6": true,

@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle atom-html2js-v2",
-        "command": "atom-html2js-v2:toggle"
+        "label": "Toggle Html2Js",
+        "command": "html2js:toggle"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "atom-html2js-v2",
+          "label": "Html2Js",
           "submenu": [
             {
               "label": "Toggle",
-              "command": "atom-html2js-v2:toggle"
+              "command": "html2js:toggle"
             }
           ]
         }

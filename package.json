@@ -16,7 +16,9 @@
 		"type": "git",
 		"url": "https://jerone@github.com/jerone/atom-html2js"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"event-kit": "^2.0.0"
+	},
 	"devDependencies": {
 		"eslint": "^2.3.0",
 		"eslint-config-standard": "^5.1.0",

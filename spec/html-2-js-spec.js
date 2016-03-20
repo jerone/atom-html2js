@@ -103,11 +103,21 @@ document.body.appendChild(div$0$0)
     `.trim())
   })
 
+  it('converts text node to javascript', () => {
+    expect(html2Js('<div>Lorum ipsum</div>')).toBe(`
+const div$0$0 = document.createElement('div')
+document.body.appendChild(div$0$0)
+
+div$0$0.appendChild(document.createTextNode('Lorum ipsum'))
+    `.trim())
+  })
+
   it('converts elements with children', () => {
     expect(html2Js(`
 <div>
   <span class="bar"></span>
   <br/>
+  <strong data-foo="bar">Lorum ipsum</strong>
 </div>
     `)).toBe(`
 const div$0$0 = document.createElement('div')
@@ -119,15 +129,12 @@ div$0$0.appendChild(span$1$0)
 
 const br$1$1 = document.createElement('br')
 div$0$0.appendChild(br$1$1)
-    `.trim())
-  })
 
-  it('converts text node to javascript', () => {
-    expect(html2Js('<div>Lorum ipsum</div>')).toBe(`
-const div$0$0 = document.createElement('div')
-document.body.appendChild(div$0$0)
+const strong$1$2 = document.createElement('strong')
+strong$1$2.dataset.add('foo', 'bar')
+div$0$0.appendChild(strong$1$2)
 
-div$0$0.appendChild(document.createTextNode('Lorum ipsum'))
+strong$1$2.appendChild(document.createTextNode('Lorum ipsum'))
     `.trim())
   })
 })

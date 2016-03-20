@@ -34,6 +34,14 @@ document.body.appendChild(div$0$0)
     `.trim())
   })
 
+  it('converts invalid html to javascript', () => {
+    expect(html2Js('<DIV FOO="BAR"></DIV>')).toBe(`
+const div$0$0 = document.createElement('div')
+div$0$0.setAttribute('foo', 'BAR')
+document.body.appendChild(div$0$0)
+    `.trim())
+  })
+
   // Classes
   it('converts classes to javascript', () => {
     expect(html2Js('<div class="foo"></div>')).toBe(`

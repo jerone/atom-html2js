@@ -121,4 +121,13 @@ const br$1$1 = document.createElement('br')
 div$0$0.appendChild(br$1$1)
     `.trim())
   })
+
+  it('converts text node to javascript', () => {
+    expect(html2Js('<div>Lorum ipsum</div>')).toBe(`
+const div$0$0 = document.createElement('div')
+document.body.appendChild(div$0$0)
+
+div$0$0.appendChild(document.createTextNode('Lorum ipsum'))
+    `.trim())
+  })
 })

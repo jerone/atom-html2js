@@ -2,7 +2,7 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle Html2Js",
+        "label": "Toggle HTML2JS",
         "command": "html2js:toggle"
       }
     ]
@@ -12,7 +12,7 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "Html2Js",
+          "label": "HTML2JS",
           "submenu": [
             {
               "label": "Toggle",

@@ -6,7 +6,8 @@ tries to follow the [Keep a CHANGELOG](http://keepachangelog.com) convention.
 
 ## [vNext](https://github.com/jerone/atom-html2js/compare/v0.1.0...master) - Unreleased
 
-*   ...
+*   :bug: Fallback grammar when Babel isn't available.
+*   :sparkles: Input can be selection.
 
 ## v0.1.0 - 2016-03-21
 

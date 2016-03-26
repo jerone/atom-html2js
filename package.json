@@ -2,7 +2,13 @@
 	"name": "HTML2JS",
 	"version": "0.1.0",
 	"description": "Convert HTML to JavaScript",
-	"keywords": [],
+	"keywords": [
+		"HTML",
+		"JavaScript",
+		"HTML5",
+		"JS"
+	],
+	"homepage": "https://github.com/jerone/atom-html2js",
 	"bugs": {
 		"url": "https://github.com/jerone/atom-html2js/issues"
 	},
@@ -10,7 +16,6 @@
 	"author": {
 		"name": "Jeroen van Warmerdam"
 	},
-	"contributors": [],
 	"main": "./lib/html2js",
 	"repository": {
 		"type": "git",

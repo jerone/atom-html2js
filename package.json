@@ -1,40 +1,44 @@
 {
-	"name": "HTML2JS",
-	"version": "0.2.1",
-	"description": "Convert HTML to JavaScript",
-	"keywords": [
-		"HTML",
-		"JavaScript",
-		"HTML5",
-		"JS"
-	],
-	"homepage": "https://github.com/jerone/atom-html2js",
-	"bugs": {
-		"url": "https://github.com/jerone/atom-html2js/issues"
-	},
-	"license": "MIT",
-	"author": {
-		"name": "Jeroen van Warmerdam"
-	},
-	"main": "./lib/html2js",
-	"repository": {
-		"type": "git",
-		"url": "https://jerone@github.com/jerone/atom-html2js"
-	},
-	"dependencies": {
-		"event-kit": "^2.0.0"
-	},
-	"devDependencies": {
-		"eslint": "^2.5.1",
-		"eslint-config-standard": "^5.1.0",
-		"eslint-plugin-promise": "^1.1.0",
-		"eslint-plugin-standard": "^1.3.2",
-		"standard": "^6.0.8"
-	},
-	"engines": {
-		"atom": ">=1.0.0 <2.0.0"
-	},
-	"activationCommands": {
-		"atom-workspace": "html2js:toggle"
-	}
+  "name": "HTML2JS",
+  "version": "0.2.1",
+  "description": "Convert HTML to JavaScript",
+  "keywords": [
+    "HTML",
+    "JavaScript",
+    "HTML5",
+    "JS",
+    "convert"
+  ],
+  "homepage": "https://github.com/jerone/atom-html2js",
+  "bugs": {
+    "url": "https://github.com/jerone/atom-html2js/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jeroen van Warmerdam"
+  },
+  "main": "./lib/html2js",
+  "repository": {
+    "type": "git",
+    "url": "https://jerone@github.com/jerone/atom-html2js"
+  },
+  "scripts": {
+    "lint": "eslint --format ./node_modules/coffeelint-reporter-style-for-eslint-formatter/main.js ."
+  },
+  "dependencies": {
+    "event-kit": "^2.0.0"
+  },
+  "devDependencies": {
+    "coffeelint-reporter-style-for-eslint-formatter": "^0.5.0",
+    "eslint": "^3.7.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.1"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "activationCommands": {
+    "atom-workspace": "html2js:toggle"
+  }
 }

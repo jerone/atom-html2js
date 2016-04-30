@@ -1,26 +1,21 @@
 {
-	"extends": "standard",
-	"plugins": [
-		"standard"
-	],
-	"globals": {
-		"atom": true,
-		"advanceClock": true,
-		"atom": true,
-		"beforeEach": true,
-		"expect": true,
-		"describe": true,
-		"it": true,
-		"jasmine": true,
-		"MouseEvent": true,
-		"Node": true,
-		"runs": true,
-		"spyOn": true,
-		"waits": true,
-		"waitsForPromise": true
-	},
-	"env": {
-		"es6": true,
-		"node": true
-	}
+  "extends": "standard",
+  "globals": {
+    "atom": true,
+    "afterEach": true,
+    "beforeEach": true,
+    "describe": true,
+    "fdescribe": true,
+    "xdescribe": true,
+    "expect": true,
+    "it": true,
+    "fit": true,
+    "xit": true,
+    "jasmine": true,
+    "runs": true,
+    "spyOn": true,
+    "waitsFor": true,
+    "waitsForPromise": true,
+    "indexedDB": true
+  }
 }

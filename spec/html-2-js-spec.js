@@ -105,7 +105,7 @@ document.body.appendChild(div$0$0)
     it('converts events to javascript', () => {
       expect(html2Js('<div onclick="foo()"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
-div$0$0.addEventListener('click', e => foo() )
+div$0$0.addEventListener('click', e => foo())
 document.body.appendChild(div$0$0)
       `.trim())
     })

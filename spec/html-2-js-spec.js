@@ -43,64 +43,72 @@ document.body.appendChild(div$0$0)
   })
 
   // Classes
-  it('converts classes to javascript', () => {
-    expect(html2Js('<div class="foo"></div>')).toBe(`
+  describe('with classes', () => {
+    it('converts classes to javascript', () => {
+      expect(html2Js('<div class="foo"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.classList.add('foo')
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
 
-    expect(html2Js('<div class="foo bar"></div>')).toBe(`
+      expect(html2Js('<div class="foo bar"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.classList.add('foo', 'bar')
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
 
-    expect(html2Js('<div class="foo bar foo-bar"></div>')).toBe(`
+      expect(html2Js('<div class="foo bar foo-bar"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.classList.add('foo', 'bar', 'foo-bar')
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
+    })
   })
 
   // Attributes
-  it('converts attributes to javascript', () => {
-    expect(html2Js('<div foo="bar"></div>')).toBe(`
+  describe('with attributes', () => {
+    it('converts attributes to javascript', () => {
+      expect(html2Js('<div foo="bar"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.setAttribute('foo', 'bar')
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
 
-    expect(html2Js('<div foo="bar" foo-bar="bar-foo"></div>')).toBe(`
+      expect(html2Js('<div foo="bar" foo-bar="bar-foo"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.setAttribute('foo', 'bar')
 div$0$0.setAttribute('foo-bar', 'bar-foo')
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
+    })
   })
 
   // Datasets
-  it('converts datasets to javascript', () => {
-    expect(html2Js('<div data-foo="bar"></div>')).toBe(`
+  describe('with datasets', () => {
+    it('converts datasets to javascript', () => {
+      expect(html2Js('<div data-foo="bar"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.dataset.add('foo', 'bar')
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
 
-    expect(html2Js('<div data-foo="bar" data-foo-bar="123"></div>')).toBe(`
+      expect(html2Js('<div data-foo="bar" data-foo-bar="123"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.dataset.add('foo', 'bar')
 div$0$0.dataset.add('foo-bar', 123)
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
+    })
   })
 
-  it('converts events to javascript', () => {
-    expect(html2Js('<div onclick="foo()"></div>')).toBe(`
+  describe('with events', () => {
+    it('converts events to javascript', () => {
+      expect(html2Js('<div onclick="foo()"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.addEventListener('click', e => foo() )
 document.body.appendChild(div$0$0)
-    `.trim())
+      `.trim())
+    })
   })
 
   it('converts text node to javascript', () => {

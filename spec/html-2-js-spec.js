@@ -91,11 +91,20 @@ const div$0$0 = document.createElement('div')
 div$0$0.dataset.add('foo', 'bar')
 document.body.appendChild(div$0$0)
       `.trim())
+    })
 
+    it('converts datasets with integers to javascript', () => {
       expect(html2Js('<div data-foo="bar" data-foo-bar="123"></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.dataset.add('foo', 'bar')
 div$0$0.dataset.add('foo-bar', 123)
+document.body.appendChild(div$0$0)
+      `.trim())
+
+      expect(html2Js('<div data-foo="bar" data-foo-bar="-123"></div>')).toBe(`
+const div$0$0 = document.createElement('div')
+div$0$0.dataset.add('foo', 'bar')
+div$0$0.dataset.add('foo-bar', -123)
 document.body.appendChild(div$0$0)
       `.trim())
     })

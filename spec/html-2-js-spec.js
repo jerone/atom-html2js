@@ -83,10 +83,19 @@ document.body.appendChild(div$0$0)
     })
 
     it('converts empty attributes to javascript', () => {
-      expect(html2Js('<div foo>')).toBe(`
+      expect(html2Js('<div foo></div>')).toBe(`
 const div$0$0 = document.createElement('div')
 div$0$0.setAttribute('foo', '')
 document.body.appendChild(div$0$0)
+      `.trim())
+    })
+
+    it('converts checked attribute to javascript', () => {
+      expect(html2Js('<input type="checkbox" checked />')).toBe(`
+const input$0$0 = document.createElement('input')
+input$0$0.setAttribute('type', 'checkbox')
+input$0$0.setAttribute('checked', true)
+document.body.appendChild(input$0$0)
       `.trim())
     })
   })

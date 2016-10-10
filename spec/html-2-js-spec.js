@@ -137,13 +137,30 @@ document.body.appendChild(div$0$0)
     })
   })
 
-  it('converts text node to javascript', () => {
-    expect(html2Js('<div>Lorum ipsum</div>')).toBe(`
+  describe('with text nodes', () => {
+    it('converts text node to javascript', () => {
+      expect(html2Js('<div>Lorum ipsum</div>')).toBe(`
 const div$0$0 = document.createElement('div')
 document.body.appendChild(div$0$0)
 
 div$0$0.appendChild(document.createTextNode('Lorum ipsum'))
-    `.trim())
+      `.trim())
+    })
+
+    it('converts root text node to javascript', () => {
+      expect(html2Js('Lorum ipsum')).toBe(`
+document.body.appendChild(document.createTextNode('Lorum ipsum'))
+      `.trim())
+    })
+
+    it('converts text node with quote in the text to javascript', () => {
+      expect(html2Js('<div>Lorum ipsum\'s</div>')).toBe(`
+const div$0$0 = document.createElement('div')
+document.body.appendChild(div$0$0)
+
+div$0$0.appendChild(document.createTextNode('Lorum ipsum&#39;s'))
+      `.trim())
+    })
   })
 
   it('converts elements with children', () => {

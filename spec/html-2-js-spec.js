@@ -81,6 +81,14 @@ div$0$0.setAttribute('foo-bar', 'bar-foo')
 document.body.appendChild(div$0$0)
       `.trim())
     })
+
+    it('converts empty attributes to javascript', () => {
+      expect(html2Js('<div foo>')).toBe(`
+const div$0$0 = document.createElement('div')
+div$0$0.setAttribute('foo', '')
+document.body.appendChild(div$0$0)
+      `.trim())
+    })
   })
 
   // Datasets

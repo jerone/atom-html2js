@@ -188,4 +188,37 @@ div$0$0.appendChild(strong$1$2)
 strong$1$2.appendChild(document.createTextNode('Lorum ipsum'))
     `.trim())
   })
+
+  it('converts multi-level HTML to javascript', () => {
+    expect(html2Js(`
+<div x="$1">
+  <div x="$1$1">
+    <div x="$1$1$1"></div>
+  </div>
+  <div x="$1$2">
+    <div x="$1$2$1"></div>
+  </div>
+</div>
+    `.trim())).toBe(`
+const div$1 = document.createElement('div')
+div$1.setAttribute('x', '$1')
+document.body.appendChild(div$1)
+
+const div$1$1 = document.createElement('div')
+div$1$1.setAttribute('x', '$1$1')
+div$1.appendChild(div$1$1)
+
+const div$1$1$1 = document.createElement('div')
+div$1$1$1.setAttribute('x', '$1$1$1')
+div$1$1.appendChild(div$1$1$1)
+
+const div$1$2 = document.createElement('div')
+div$1$2.setAttribute('x', '$1$2')
+div$1.appendChild(div$1$2)
+
+const div$1$2$1 = document.createElement('div')
+div$1$2$1.setAttribute('x', '$1$2$1')
+div$1$2.appendChild(div$1$2$1)
+    `.trim())
+  })
 })
